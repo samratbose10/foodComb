@@ -4,13 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Food Combination Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Random Food Combination Generator</h1>
     <div id="generator">
         <button onclick="generateCombination()">Generate Combination</button>
         <div id="combination"></div>
+    </div>
+    <div id="user-input">
+        <h2>Generate with Your Ingredient</h2>
+        <input type="text" id="user-ingredient" placeholder="Enter your ingredient">
+        <button onclick="generateWithUserIngredient()">Generate with My Ingredient</button>
     </div>
     <div id="custom-ingredients">
         <h2>Add Your Own Ingredient</h2>

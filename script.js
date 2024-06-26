@@ -1,4 +1,3 @@
-
 const ingredients = {
     Fruits: ["Banana", "Mango", "Blueberries", "Pineapple"],
     Vegetables: ["Pickles", "Avocado", "Beetroot"],
@@ -27,6 +26,25 @@ function generateCombination() {
             combinationElement.textContent = `${ingredient1} and ${ingredient2}`;
             combinationElement.style.opacity = 1;
         }, 300);
+    }
+}
+
+function generateWithUserIngredient() {
+    const userIngredient = document.getElementById("user-ingredient").value;
+    if (userIngredient) {
+        const categories = Object.keys(ingredients);
+        const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+        const randomIndex = Math.floor(Math.random() * ingredients[randomCategory].length);
+        const randomIngredient = ingredients[randomCategory][randomIndex];
+
+        const combinationElement = document.getElementById("combination");
+        combinationElement.style.opacity = 0;
+        setTimeout(() => {
+            combinationElement.textContent = `${userIngredient} and ${randomIngredient}`;
+            combinationElement.style.opacity = 1;
+        }, 300);
+    } else {
+        alert("Please enter an ingredient.");
     }
 }
 

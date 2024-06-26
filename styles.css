@@ -1,17 +1,30 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #e0f7fa;
     padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    color: #00796b;
+    margin-bottom: 20px;
+    font-size: 36px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 #generator {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     display: inline-block;
-    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#generator:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
 }
 
 button {
@@ -19,31 +32,47 @@ button {
     font-size: 16px;
     margin-top: 20px;
     cursor: pointer;
-    background-color: #28a745;
+    background-color: #00796b;
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #004d40;
+    transform: scale(1.1);
 }
 
 #combination {
     font-size: 24px;
     margin-top: 20px;
-    color: #333;
+    color: #00796b;
+    animation: fadeIn 1s ease-in-out;
 }
 
-#custom-ingredients, #ingredients-list {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#custom-ingredients, #user-input, #ingredients-list {
     margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+    width: 80%;
 }
 
-input {
+#custom-ingredients input, #custom-ingredients select, #user-input input {
     padding: 10px;
     font-size: 16px;
     margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 ul {
@@ -52,7 +81,7 @@ ul {
 }
 
 li {
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
@@ -60,19 +89,32 @@ li {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease-in-out;
 }
 
 li button {
-    background-color: #dc3545;
+    background-color: #d32f2f;
     border: none;
     border-radius: 5px;
     padding: 5px 10px;
     cursor: pointer;
     color: white;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 li button:hover {
-    background-color: #c82333;
+    background-color: #b71c1c;
+    transform: scale(1.1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
